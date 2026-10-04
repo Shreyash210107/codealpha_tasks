@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Image Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>My Image Gallery</h1>
+        <p>Explore beautiful moments</p>
+    </header>
+
+    <!-- Category Filters -->
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="city">City</button>
+        <button class="filter-btn" data-filter="travel">Travel</button>
+    </div>
+
+    <!-- Gallery -->
+    <main class="gallery">
+
+        <div class="gallery-item" data-category="nature">
+            <img src="https://picsum.photos/id/1015/600/400"
+                 alt="Beautiful Mountain"
+                 onclick="openLightbox(0)">
+            <div class="caption">Mountain</div>
+        </div>
+
+        <div class="gallery-item" data-category="nature">
+            <img src="https://picsum.photos/id/1018/600/400"
+                 alt="Forest"
+                 onclick="openLightbox(1)">
+            <div class="caption">Forest</div>
+        </div>
+
+        <div class="gallery-item" data-category="city">
+            <img src="https://picsum.photos/id/1031/600/400"
+                 alt="City Building"
+                 onclick="openLightbox(2)">
+            <div class="caption">City</div>
+        </div>
+
+        <div class="gallery-item" data-category="travel">
+            <img src="https://picsum.photos/id/1036/600/400"
+                 alt="Travel Destination"
+                 onclick="openLightbox(3)">
+            <div class="caption">Travel</div>
+        </div>
+
+        <div class="gallery-item" data-category="nature">
+            <img src="https://picsum.photos/id/1043/600/400"
+                 alt="Nature Landscape"
+                 onclick="openLightbox(4)">
+            <div class="caption">Landscape</div>
+        </div>
+
+        <div class="gallery-item" data-category="city">
+            <img src="https://picsum.photos/id/1050/600/400"
+                 alt="City Street"
+                 onclick="openLightbox(5)">
+            <div class="caption">Street</div>
+        </div>
+
+        <div class="gallery-item" data-category="travel">
+            <img src="https://picsum.photos/id/1056/600/400"
+                 alt="Travel Location"
+                 onclick="openLightbox(6)">
+            <div class="caption">Adventure</div>
+        </div>
+
+        <div class="gallery-item" data-category="nature">
+            <img src="https://picsum.photos/id/106/600/400"
+                 alt="Beautiful Nature"
+                 onclick="openLightbox(7)">
+            <div class="caption">Nature</div>
+        </div>
+
+    </main>
+
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+
+        <button class="close" onclick="closeLightbox()">&times;</button>
+
+        <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+
+        <img id="lightbox-img" src="" alt="Full Size Image">
+
+        <button class="next" onclick="changeImage(1)">&#10095;</button>
+
+    </div>
+
+
+    <footer>
+        <p>© 2026 My Image Gallery</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
