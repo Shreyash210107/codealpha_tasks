@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreyash Patil | Developer Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #02021e;
+            --accent-color: #9b4dff;
+            --secondary-accent: #00d2ff;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --text-color: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Animated Background Particles Effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1a1a4d 0%, #02021e 100%);
+            z-index: -1;
+        }
+
+        /* NAVIGATION */
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background: rgba(156, 3, 173, 0.8);
+            backdrop-filter: blur(15px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav ul { display: flex; }
+        nav ul li { list-style: none; margin: 0 20px; }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 400;
+            transition: 0.3s;
+            opacity: 0.8;
+        }
+        nav ul li a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 150px 10% 100px;
+            min-height: 90vh;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 550px;
+            filter: drop-shadow(0 0 30px var(--accent-color));
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+
+        .purple { color: var(--accent-color); }
+        #element { color: var(--secondary-accent); font-weight: 700; }
+
+        /* BUTTONS */
+        .btn-group { margin-top: 30px; }
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.4s;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            box-shadow: 0 0 20px rgba(155, 77, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(155, 77, 255, 0.7);
+        }
+
+        /* SKILLS SECTION */
+        .container {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: var(--glass-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: 0.4s;
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary-accent);
+        }
+
+        .skill-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+        }
+
+        /* PROJECTS SECTION */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: var(--glass-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-img {
+            height: 200px;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+        }
+
+        .project-info { padding: 20px; }
+        .project-info h3 { margin-bottom: 10px; color: var(--secondary-accent); }
+
+        /* FOOTER */
+        footer {
+            padding: 60px 0;
+            background: #010114;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links { margin: 25px 0; }
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: 0.3s;
+            opacity: 0.7;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 120px;
+            }
+            .hero-content h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+            .hero-image img { width: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">My Portfolio<span class="purple">.</span></div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p style="font-size: 1.2rem; margin-bottom: 10px;">Welcome to my world</p>
+                <h1>Hi, I'm <span class="purple">Shreyash Patil</span></h1>
+                <h2>A <span id="element"></span></h2>
+                <p style="margin-top: 20px; opacity: 0.8; line-height: 1.6;">
+                    I build high-quality web applications and design stunning user interfaces. 
+                    Let's turn your ideas into digital reality.
+                </p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-primary">Download CV</a>
+                    <a href="https://github.com/Shreyash210107/Personal-finance-tracker" class="btn" style="border: 1px solid white; color: white;">My GitHub</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="bg.png.webp" alt="Profile" onerror="this.src='https://cdn-icons-png.flaticon.com/512/4333/4333609.png'">
+            </div>
+        </section>
+
+        <section class="container" id="skills">
+            <h2 class="section-title">Technical <span class="purple">Skills</span></h2>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fab fa-html5"></i><p>HTML5</p></div>
+                <div class="skill-card"><i class="fab fa-css3-alt"></i><p>CSS3</p></div>
+                <div class="skill-card"><i class="fab fa-js"></i><p>JavaScript</p></div>
+                <div class="skill-card"><i class="fab fa-react"></i><p>React.js</p></div>
+                <div class="skill-card"><i class="fab fa-figma"></i><p>UI Design</p></div>
+                <div class="skill-card"><i class="fab fa-github"></i><p>Git/GitHub</p></div>
+            </div>
+        </section>
+
+        <section class="container" id="projects">
+            <h2 class="section-title">Latest <span class="purple">Work</span></h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-code fa-3x"></i></div>
+                    <div class="project-info">
+                        <h3>E-Commerce App</h3>
+                        <p>A fully functional shopping platform built with React and Node.js.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-laptop-code fa-3x"></i></div>
+                    <div class="project-info">
+                        <h3>Social Media Dashboard</h3>
+                        <p>Real-time analytics dashboard with interactive charts and dark mode.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-paint-brush fa-3x"></i></div>
+                    <div class="project-info">
+                        <h3>Design Portfolio</h3>
+                        <p>A creative portfolio showcase for photographers and designers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h3>Connect With Me</h3>
+        <p style="opacity: 0.7; margin-top: 10px;">patilshreyash210107@gmail.com</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/shreyash-patil-b3681232a?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Shreyash210107/Personal-finance-tracker"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+
+        </div>
+        <p style="font-size: 0.9rem; opacity: 0.5;">© 2026 Shreyash Portfolio | All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Frontend Engineer', 'UI/UX Designer', 'Creative Thinker'],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true
+        });
+    </script>
+</body>
+</html>
